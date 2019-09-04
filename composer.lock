@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ad7cd73e0c51314493c76f0855e19b5",
+    "content-hash": "9fe05b1b24b7860d2292ab16d0f7b04f",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -906,6 +906,45 @@
                 "mailer"
             ],
             "time": "2018-07-31T09:26:32+00:00"
+        },
+        {
+            "name": "xvs32x/tinymce-responsivefilemanager",
+            "version": "1.0.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xvs32x/tinymce-responsivefilemanager.git",
+                "reference": "15cfe4900348b74466751a323ba5710994f068bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xvs32x/tinymce-responsivefilemanager/zipball/15cfe4900348b74466751a323ba5710994f068bc",
+                "reference": "15cfe4900348b74466751a323ba5710994f068bc",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "2.0.*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "xvs32x\\tinymce\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "xvs32x",
+                    "email": "x64vs32x@mail.ru"
+                }
+            ],
+            "description": "TinyMCE + Responsive file manager widget for Yii2",
+            "keywords": [
+                "xvs32x"
+            ],
+            "time": "2016-02-21T19:47:35+00:00"
         },
         {
             "name": "yiisoft/yii2",
