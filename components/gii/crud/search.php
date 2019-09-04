@@ -1,0 +1,1 @@
+<?= $this->render('@vendor/yiisoft/yii2-gii/src/generators/crud/default/search.php', ['generator' => $generator]); ?>

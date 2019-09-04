@@ -1,0 +1,1 @@
+<?= $this->render('@vendor/yiisoft/yii2-gii/generators/controller/default/view.php', ['generator' => $generator]); ?>
