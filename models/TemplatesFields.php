@@ -29,7 +29,8 @@ class TemplatesFields extends \yii\db\ActiveRecord
     {
         return [
             [['template_id', 'name', 'symbol'], 'required'],
-            [['template_id'], 'integer'],
+            ['template_id', 'integer'],
+            [['name', 'symbol'], 'unique'],
             [['name', 'symbol'], 'string', 'max' => 255],
             [['template_id'], 'exist', 'skipOnError' => true, 'targetClass' => Templates::className(), 'targetAttribute' => ['template_id' => 'id']],
         ];
@@ -44,7 +45,7 @@ class TemplatesFields extends \yii\db\ActiveRecord
             'id' => 'ID',
             'template_id' => 'Шаблон',
             'name' => 'Название',
-            'symbol' => 'Обозначение',
+            'symbol' => 'Обозначение'
         ];
     }
 

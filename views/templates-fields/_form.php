@@ -7,7 +7,7 @@ use yii\bootstrap\ActiveForm;
 /* @var $model app\models\TemplatesFields */
 /* @var $form yii\bootstrap\ActiveForm */
 
-$form = ActiveForm::begin(['layout' => 'horizontal']); ?>
+$form = ActiveForm::begin(['layout' => 'horizontal', 'enableAjaxValidation' => true]); ?>
 
     <?= $form->field($model, 'template_id')->hiddenInput(['value' => Yii::$app->request->get('template_id')])->label(false) ?>
 
