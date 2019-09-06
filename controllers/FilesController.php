@@ -81,19 +81,23 @@ class FilesController extends AdminController
     public function actionPrint($id)
     {
         $model = $this->findModel($id);
-        $content = $model->template->content;
+        $template = $model->template;
+        $content = $template->content;
         
         foreach ($model->filds as $field) {
             $content = str_replace($field->symbol, $model->filds_value[$field->id], $content);
         }
         $pdf = new Pdf([
             //'mode' => Pdf::MODE_CORE,
-            //'format' => Pdf::FORMAT_A4,
-            //'orientation' => Pdf::ORIENT_PORTRAIT,
             //'destination' => Pdf::DEST_BROWSER,
+            'format' => $template->getFormats($template->format),
+            'orientation' => $template->orientation,
             'content' => $content,
-            //'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css',
-            //'cssInline' => '.kv-heading-1{font-size:18px}'
+            'marginLeft' => 0,
+            'marginRight' => 0,
+            'marginTop' => 0,
+            'marginBottom' => 0
+            
         ]);
         return $pdf->render();
     }

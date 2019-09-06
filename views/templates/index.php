@@ -23,6 +23,20 @@ $this->title = 'Шаблоны';
         ['class' => 'yii\grid\SerialColumn'],
 
             'name',
+            [
+                'attribute' => 'format',
+                'filter' => Html::activeDropDownList($searchModel, 'format', $searchModel->getFormats(), ['class' => 'form-control', 'prompt' => '- выбрать -']),
+                'value' => function ($model, $index, $widget) {
+                    return $model->getFormats($model->format);
+                }
+            ],
+            [
+                'attribute' => 'orientation',
+                'filter' => Html::activeDropDownList($searchModel, 'orientation', $searchModel->getOrientations(), ['class' => 'form-control', 'prompt' => '- выбрать -']),
+                'value' => function ($model, $index, $widget) {
+                    return $model->getOrientations($model->orientation);
+                }
+            ],
             SiteHelper::created_at($searchModel),
 
             [

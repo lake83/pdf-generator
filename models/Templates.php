@@ -6,6 +6,7 @@ use Yii;
 use yii\helpers\ArrayHelper;
 use yii\caching\TagDependency;
 use yii\behaviors\TimestampBehavior;
+use kartik\mpdf\Pdf;
 
 /**
  * This is the model class for table "templates".
@@ -13,6 +14,8 @@ use yii\behaviors\TimestampBehavior;
  * @property int $id
  * @property string $name
  * @property string $content
+ * @property int $format
+ * @property string $orientation
  * @property int $created_at
  * @property int $updated_at
  */
@@ -42,9 +45,10 @@ class Templates extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'content'], 'required'],
+            [['name', 'content', 'format', 'orientation'], 'required'],
             ['content', 'string'],
-            [['created_at', 'updated_at'], 'integer'],
+            [['format', 'created_at', 'updated_at'], 'integer'],
+            ['orientation', 'string', 'max' => 1],
             ['name', 'string', 'max' => 255]
         ];
     }
@@ -58,6 +62,8 @@ class Templates extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Название',
             'content' => 'Шаблон',
+            'format' => 'Формат',
+            'orientation' => 'Ориентация',
             'created_at' => 'Создано',
             'updated_at' => 'Изменено'
         ];
@@ -93,5 +99,40 @@ class Templates extends \yii\db\ActiveRecord
         return Yii::$app->cache->getOrSet('templates', function () {
             return ArrayHelper::map(self::find()->select('id,name')->all(), 'id', 'name');
         }, 0, new TagDependency(['tags' => 'templates']));
+    }
+    
+    /**
+     * Возвращает список форматов листа
+     * 
+     * @param integer $key ключ в массиве названий
+     * @return mixed
+     */
+    public static function getFormats($key = null)
+    {
+        $array = [
+            1 => Pdf::FORMAT_A4,
+            2 => Pdf::FORMAT_A3,
+            3 => Pdf::FORMAT_LETTER,
+            4 => Pdf::FORMAT_LEGAL,
+            5 => Pdf::FORMAT_FOLIO,
+            6 => Pdf::FORMAT_LEDGER,
+            7 => Pdf::FORMAT_TABLOID
+        ];
+        return is_null($key) ? $array : $array[$key];
+    }
+    
+    /**
+     * Возвращает список ориентаций листа
+     * 
+     * @param integer $key ключ в массиве названий
+     * @return mixed
+     */
+    public static function getOrientations($key = null)
+    {
+        $array = [
+            Pdf::ORIENT_PORTRAIT => 'PORTRAIT',
+            Pdf::ORIENT_LANDSCAPE => 'LANDSCAPE'
+        ];
+        return is_null($key) ? $array : $array[$key];
     }
 }
