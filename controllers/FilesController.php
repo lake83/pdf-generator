@@ -83,6 +83,7 @@ class FilesController extends AdminController
         $model = $this->findModel($id);
         $template = $model->template;
         $content = $template->content;
+        //$content = $this->renderPartial('_samplePdf', ['model' => $data]);
         
         foreach ($model->filds as $field) {
             $content = str_replace($field->symbol, $model->filds_value[$field->id], $content);
@@ -92,12 +93,12 @@ class FilesController extends AdminController
             //'destination' => Pdf::DEST_BROWSER,
             'format' => $template->getFormats($template->format),
             'orientation' => $template->orientation,
+            'cssFile' => '@webroot/css/main.css',
             'content' => $content,
             'marginLeft' => 0,
             'marginRight' => 0,
             'marginTop' => 0,
             'marginBottom' => 0
-            
         ]);
         return $pdf->render();
     }
