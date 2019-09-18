@@ -34,7 +34,7 @@ class FilesController extends AdminController
         
         if ($model->load(Yii::$app->request->post())) {
             if ($model->values == false) {
-                $model->scenario = 'second';
+                //$model->scenario = 'second';
                 $model->values = true;
                 
                 foreach ($model->filds as $field) {
@@ -60,7 +60,7 @@ class FilesController extends AdminController
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $model->scenario = 'second';
+        //$model->scenario = 'second';
         
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('success', 'Запись добавлена.');

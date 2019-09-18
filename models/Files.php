@@ -32,7 +32,7 @@ class Files extends \yii\db\ActiveRecord
     {
         return [
             [['template_id', 'name'], 'required'],
-            ['rows', 'required', 'on' => 'second'],
+            //['rows', 'required', 'on' => 'second'],
             ['template_id', 'integer'],
             ['name', 'string', 'max' => 255],
             [['filds_value', 'rows', 'values'], 'safe']
