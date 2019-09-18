@@ -24,7 +24,8 @@
 	<div class="header">Наше предложение</div>
 
 	<div class="content">
-		<img src="../images/uploads/source/table-bg.png" />
+		<div class="small-line-left"></div>
+        <div class="small-line-right"></div>
         <table class="table-wrap">
 			<tr>
                 <td>

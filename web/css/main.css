@@ -63,7 +63,13 @@
     border-spacing: 10px 0;
 }
 .table-wrap {
-    margin: -110px 0 30px 0;
+    margin-bottom: 30px;
+}
+.page-2 .table tr:nth-child(2n+1) td {
+    background: #eef0f6;
+}
+.page-2 .table {
+    margin-top: -105px;
 }
 .des {
     font-size: 16px;
@@ -94,6 +100,17 @@
 }
 .table-3 td {
     vertical-align: top;
+}
+.small-line-left, .small-line-right {
+    border-left: 1px solid #dee0e8;
+    height: 100px;
+    margin-top: 5px;
+}
+.small-line-left {
+    margin-left: 175px;
+}
+.small-line-right {
+    margin: -100px 0 0 499px;
 }
 .line {
     border-left: 1px solid #dee0e8;
