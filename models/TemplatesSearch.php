@@ -18,7 +18,7 @@ class TemplatesSearch extends Templates
     {
         return [
             [['id', 'format', 'created_at', 'updated_at'], 'integer'],
-            [['name', 'orientation', 'content'], 'safe'],
+            [['name', 'orientation', 'content', 'css'], 'safe'],
         ];
     }
 
@@ -57,6 +57,7 @@ class TemplatesSearch extends Templates
         ]);
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'content', $this->content])
+            ->andFilterWhere(['like', 'css', $this->css])
             ->andFilterWhere(['like', 'orientation', $this->orientation]);
 
         return $dataProvider;

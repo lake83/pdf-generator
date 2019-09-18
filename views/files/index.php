@@ -36,7 +36,8 @@ $this->title = 'Файлы';
                 'template' => '{print} {update} {delete}',
                 'buttons' => [
                     'print' => function ($url, $model, $key) {
-                        return Html::a('<span class="glyphicon glyphicon-print"></span>', ['print', 'id' => $model->id], ['title' => 'Опубликовать', 'data-pjax' => 0]);
+                        return Html::a('<span class="glyphicon glyphicon-print"></span>', ['print', 'id' => $model->id],
+                            ['title' => 'Опубликовать', 'data-pjax' => 0, 'target' => '_blank']);
                     }
                 ],
                 'options' => ['width' => '70px']

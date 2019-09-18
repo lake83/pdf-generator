@@ -13,6 +13,8 @@ $form = ActiveForm::begin(['layout' => 'horizontal']); ?>
 
     <?= $form->field($model, 'content')->widget(\app\components\RedactorTinymce::className()) ?>
     
+    <?= $form->field($model, 'css')->widget(\app\components\FilemanagerInput::className()) ?>
+    
     <?= $form->field($model, 'format')->dropDownList($model->getFormats(), ['class' => 'form-control', 'prompt' => '- выбрать -']) ?>
     
     <?= $form->field($model, 'orientation')->dropDownList($model->getOrientations(), ['class' => 'form-control', 'prompt' => '- выбрать -']) ?>

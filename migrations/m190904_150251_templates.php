@@ -13,6 +13,7 @@ class m190904_150251_templates extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
             'content' => $this->text()->notNull(),
+            'css' => $this->string()->notNull(),
             'format' => $this->integer()->notNull(),
             'orientation' => $this->string(1)->notNull(),
             'created_at' => $this->integer()->notNull(),

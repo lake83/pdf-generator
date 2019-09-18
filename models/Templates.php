@@ -14,6 +14,7 @@ use kartik\mpdf\Pdf;
  * @property int $id
  * @property string $name
  * @property string $content
+ * @property string $css
  * @property int $format
  * @property string $orientation
  * @property int $created_at
@@ -49,7 +50,7 @@ class Templates extends \yii\db\ActiveRecord
             ['content', 'string'],
             [['format', 'created_at', 'updated_at'], 'integer'],
             ['orientation', 'string', 'max' => 1],
-            ['name', 'string', 'max' => 255]
+            [['name', 'css'], 'string', 'max' => 255]
         ];
     }
 
@@ -62,6 +63,7 @@ class Templates extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Название',
             'content' => 'Шаблон',
+            'css' => 'Файл CSS',
             'format' => 'Формат',
             'orientation' => 'Ориентация',
             'created_at' => 'Создано',

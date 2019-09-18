@@ -83,7 +83,7 @@ class FilesController extends AdminController
         $model = $this->findModel($id);
         $template = $model->template;
         $content = $template->content;
-        //$content = $this->renderPartial('_samplePdf', ['model' => $data]);
+        //$content = $this->renderPartial('_samplePdf');
         
         foreach ($model->filds as $field) {
             $content = str_replace($field->symbol, $model->filds_value[$field->id], $content);
@@ -93,7 +93,8 @@ class FilesController extends AdminController
             //'destination' => Pdf::DEST_BROWSER,
             'format' => $template->getFormats($template->format),
             'orientation' => $template->orientation,
-            'cssFile' => '@webroot/css/main.css',
+            'cssFile' => '@webroot/images/uploads/source/' . $template->css,
+            'defaultFont' => 'sans-serif',
             'content' => $content,
             'marginLeft' => 0,
             'marginRight' => 0,

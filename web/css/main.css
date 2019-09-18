@@ -3,7 +3,6 @@
     background-color: #293382;
     display: block;
     height: 100%;
-    font-family: 'Open Sans', sans-serif;
 }
 .logo {
     margin: -450px 0 0 40px;
@@ -37,4 +36,216 @@
     color: #fff;
     margin: -265px 0 0 40px;
     line-height: 46px;
+}
+
+.page-2, .page-3, .page-5 {
+    width: 100%;
+    background-color: #fff;
+    display: block;
+    height: 100%;
+    padding: 0 40px 40px 40px;
+}
+.arrow-single {
+    margin-left: 10px;
+}
+.header {
+    font-size: 40px;
+    font-weight: bold;
+    color: #293382;
+    margin: -100px 0 50px 0;
+}
+.page-2 .table tr td {
+    padding: 5px 10px 15px 10px;
+}
+.page-2 .table, .page-2 .table-2 {
+    font-size: 12px;
+    border-collapse: separate;
+    border-spacing: 10px 0;
+}
+.table-wrap {
+    margin: -110px 0 30px 0;
+}
+.des {
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 60px;
+}
+.y-pos-abs {
+    float: left;
+    margin-right: 30px;
+}
+.table-3 {
+    text-align: left;
+    font-size: 12px;
+    border-collapse: separate;
+    border-spacing: 10px 2px;
+    margin-top: -550px;
+    width: 100%;
+}
+.table-3 th {
+    color: #293382;
+}
+.table-3 th, .table-3 tr td {
+    padding: 10px;
+}
+.table-3 tr.bg td {
+    border-top-color: #fff;
+    background: #eef0f6;
+}
+.table-3 td {
+    vertical-align: top;
+}
+.line {
+    border-left: 1px solid #dee0e8;
+    height: 510px;
+    margin-left: 287px;
+}
+.table-3 tr.total td {
+    padding: 7px 10px 12px 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.total .left {
+    color: #000;
+    background: #fddb05;
+}
+.total .right {
+    color: #fff;
+    background: #293382;
+}
+.till-date {
+    margin: 30px 10px;
+    font-size: 16px;
+    line-height: 26px;
+}
+.y-pos-clock {
+    float: left;
+    margin-right: 15px;
+}
+.y-pos-arrow {
+    margin-left: 70px;
+}
+.footer {
+    color: #293382;
+    font-size: 16px;
+    margin-top: -35px;
+    width: 100%;
+}
+.blocks {
+    width: 100%;
+    margin-top: 15px;
+    text-align: left;
+}
+.blocks tr td {
+    padding-bottom: 10px;
+    
+}
+.blocks-text {
+    margin: -175px 0 0 90px;
+    font-size: 16px;
+    line-height: 24px;
+}
+.header-midle {
+    margin: 90px 0 40px 0;
+}
+.work-list {
+    margin-bottom: 150px;
+}
+
+.page-4 .header-wrap .title {
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    margin: -480px 0 0 40px;
+}
+.page-4 .header-wrap .wrap {
+    padding: 40px;
+}
+.page-4 .header-wrap .wrap .item {
+    width: 33.333%;
+    display: block;
+    float: left;
+    margin-bottom: 20px;
+}
+.page-4 .header-wrap .wrap .item-title {
+    font-weight: bold;
+    font-size: 42px;
+    color: #fddb05;
+}
+.page-4 .header-wrap .wrap p {
+    line-height: 26px;
+    font-size: 16px;
+    color: #fff;
+}
+.page-4 .des {
+    font-size: 24px;
+    line-height: 30px;
+    margin: -400px 0 60px 40px;
+    color: #293382;
+}
+.img-text {
+    padding-left: 40px;
+    margin-bottom: 90px;
+}
+.page-4 .footer {
+    position: relative;
+    top: -80px;
+    padding: 0 40px;
+}
+.letter {
+    width: 35%;
+    display: block;
+    float: left;
+}
+.project {
+    color: #293382;
+    line-height: 30px;
+    margin: 15px 0;
+    border-bottom: 1px solid #e9ebf1;
+}
+.project .title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.page-7 {
+    width: 100%;
+    background-color: #eef0f6;
+    display: block;
+    height: 100%;
+}
+.page-7 .title {
+    margin: -350px 0 160px 40px;
+    font-size: 36px;
+    line-height: 55px;
+    color: #fff;
+}
+.page-7 .block-title {
+    margin-bottom: 30px;
+    color: #a0a3ba;
+    font-size: 30px;
+    margin-left: 40px;
+}
+.manager-wrap {
+    background-color: #fff;
+}
+.manager-wrap .name {
+    color: #293382;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 30px 40px 10px 40px;
+}
+.page-7 .cnt-list li {
+    margin-bottom: 30px;
+    list-style-type: none;
+}
+.page-7 .cnt-list li p {
+    margin: -30px 0 0 50px;
+    color: #293382;
+    font-size: 12px;
+}
+.page-7 .cnt-list li p strong {
+    color: #1f202b;
+    font-size: 17px;
 }
