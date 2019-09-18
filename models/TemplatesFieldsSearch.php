@@ -18,7 +18,7 @@ class TemplatesFieldsSearch extends TemplatesFields
     {
         return [
             [['id', 'template_id'], 'integer'],
-            [['name', 'symbol'], 'safe']
+            [['name', 'symbol', 'start_value'], 'safe']
         ];
     }
 
@@ -54,7 +54,8 @@ class TemplatesFieldsSearch extends TemplatesFields
             'template_id' => $this->template_id
         ]);
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'symbol', $this->symbol]);
+            ->andFilterWhere(['like', 'symbol', $this->symbol])
+            ->andFilterWhere(['like', 'start_value', $this->start_value]);
 
         return $dataProvider;
     }

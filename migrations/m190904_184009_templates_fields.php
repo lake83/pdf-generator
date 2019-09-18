@@ -13,7 +13,8 @@ class m190904_184009_templates_fields extends Migration
             'id' => $this->primaryKey(),
             'template_id' => $this->integer()->notNull(),
             'name' => $this->string()->notNull(),
-            'symbol' => $this->string()->notNull()
+            'symbol' => $this->string()->notNull(),
+            'start_value' => $this->string()->notNull()
         ], $this->db->driverName === 'mysql' ? 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB' : null);
         
         $this->createIndex('idx-templates_fields-template', 'templates_fields', 'template_id');

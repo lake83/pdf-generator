@@ -9,6 +9,7 @@ namespace app\models;
  * @property int $template_id
  * @property string $name
  * @property string $symbol
+ * @property string $start_value
  *
  * @property Templates $template
  */
@@ -31,7 +32,7 @@ class TemplatesFields extends \yii\db\ActiveRecord
             [['template_id', 'name', 'symbol'], 'required'],
             ['template_id', 'integer'],
             [['name', 'symbol'], 'unique'],
-            [['name', 'symbol'], 'string', 'max' => 255],
+            [['name', 'symbol', 'start_value'], 'string', 'max' => 255],
             [['template_id'], 'exist', 'skipOnError' => true, 'targetClass' => Templates::className(), 'targetAttribute' => ['template_id' => 'id']],
         ];
     }
@@ -45,7 +46,8 @@ class TemplatesFields extends \yii\db\ActiveRecord
             'id' => 'ID',
             'template_id' => 'Шаблон',
             'name' => 'Название',
-            'symbol' => 'Обозначение'
+            'symbol' => 'Обозначение',
+            'start_value' => 'Начальное значение'
         ];
     }
 

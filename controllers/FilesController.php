@@ -38,7 +38,7 @@ class FilesController extends AdminController
                 $model->values = true;
                 
                 foreach ($model->filds as $field) {
-                    $model->rows[$field->id] = $field->name . '(' . $field->symbol . ')';
+                    $model->rows[$field->id] = ['label' => $field->name . '(' . $field->symbol . ')', 'value' => $field->start_value];
                 }
                 return $this->render('create', ['model' => $model]);
             } else {
@@ -67,7 +67,7 @@ class FilesController extends AdminController
             return $this->redirect(['index']);
         }
         foreach ($model->filds as $field) {
-            $model->rows[$field->id] = $field->name . '(' . $field->symbol . ')';
+            $model->rows[$field->id] = ['label' => $field->name . '(' . $field->symbol . ')', 'value' => $field->start_value];
         }
         return $this->render('update', ['model' => $model]);
     }

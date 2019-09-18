@@ -15,6 +15,8 @@ $form = ActiveForm::begin(['layout' => 'horizontal', 'enableAjaxValidation' => t
 
     <?= $form->field($model, 'symbol')->textInput(['maxlength' => true])->hint('Уникальный символ для размещения в HTML шаблона. Например: {{field_1}}') ?>
 
+    <?= $form->field($model, 'start_value')->textInput(['maxlength' => true]) ?>
+    
     <div class="box-footer">
         <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Сохранить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

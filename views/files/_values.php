@@ -24,10 +24,10 @@ $form = ActiveForm::begin(['layout' => 'horizontal']); ?>
     echo Html::activeHiddenInput($model, 'name');
     echo Html::activeHiddenInput($model, 'values');
     
-    foreach ($model->rows as $field => $label) {
+    foreach ($model->rows as $field => $data) {
         echo $form->field($model, 'rows[' . $field . ']')->textInput([
-                'value' => !$model->isNewRecord && array_key_exists($field, $model->filds_value) ? $model->filds_value[$field] : ''
-            ])->label($label);
+                'value' => !$model->isNewRecord && array_key_exists($field, $model->filds_value) ? $model->filds_value[$field] : $data['value']
+            ])->label($data['label']);
     } ?>
 
     <div class="box-footer">
