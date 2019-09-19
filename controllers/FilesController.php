@@ -87,6 +87,7 @@ class FilesController extends AdminController
         
         foreach ($model->filds as $field) {
             $content = str_replace($field->symbol, $model->filds_value[$field->id], $content);
+            $content = str_replace('{{CP_title}}', $model->name, $content);
         }
         $pdf = new Pdf([
             //'mode' => Pdf::MODE_CORE,

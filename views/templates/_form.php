@@ -13,6 +13,8 @@ $form = ActiveForm::begin(['layout' => 'horizontal']); ?>
 
     <?= $form->field($model, 'content')->widget(\app\components\RedactorTinymce::className()) ?>
     
+    <div style="margin-bottom: 20px;" class="col-md-offset-3 col-md-9">Для вывода названия комерческого предложения используйте {{CP_title}}</div>
+    
     <?= $form->field($model, 'css')->widget(\app\components\FilemanagerInput::className()) ?>
     
     <?= $form->field($model, 'format')->dropDownList($model->getFormats(), ['class' => 'form-control', 'prompt' => '- выбрать -']) ?>
