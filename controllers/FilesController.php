@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use yii\web\NotFoundHttpException;
 use kartik\mpdf\Pdf;
+use app\models\SendFileForm;
 
 /**
  * FilesController implements the CRUD actions for Files model.
@@ -76,9 +77,10 @@ class FilesController extends AdminController
      * Print file
      * 
      * @param int $id
+     * @param string $destination
      * @return string
      */
-    public function actionPrint($id)
+    public function actionPrint($id, $destination = Pdf::DEST_BROWSER)
     {
         $model = $this->findModel($id);
         $template = $model->template;
@@ -90,8 +92,7 @@ class FilesController extends AdminController
             $content = str_replace('{{CP_title}}', $model->name, $content);
         }
         $pdf = new Pdf([
-            //'mode' => Pdf::MODE_CORE,
-            //'destination' => Pdf::DEST_BROWSER,
+            'destination' => $destination,
             'format' => $template->getFormats($template->format),
             'orientation' => $template->orientation,
             'cssFile' => '@webroot/images/uploads/source/' . $template->css,
@@ -103,6 +104,27 @@ class FilesController extends AdminController
             'marginBottom' => 0
         ]);
         return $pdf->render();
+    }
+    
+    /**
+     * Send e-mail with file
+     * 
+     * @param int $id
+     * @return string
+     */
+    public function actionSend($id)
+    {
+        $model = new SendFileForm;
+        
+        if ($model->load(Yii::$app->request->post())) {
+            $model->file = $this->actionPrint($id, Pdf::DEST_STRING);
+            
+            if ($model->sendEmail()) {
+                Yii::$app->session->setFlash('success', 'Письмо отправлено.');
+                return $this->redirect(['index']);
+            }
+        }
+        return $this->render('send', ['model' => $model]);
     }
     
     /**

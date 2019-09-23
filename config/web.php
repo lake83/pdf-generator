@@ -32,12 +32,12 @@ $config = [
             'class' => 'yii\swiftmailer\Mailer',
             'useFileTransport' => false,
             'transport' => [
-                'plugins' => [
-                    [
-                        'class' => 'Swift_Plugins_ThrottlerPlugin',
-                        'constructArgs' => [20]
-                    ]     
-                ]
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.sendgrid.net',
+                'username' => 'lake0362',
+                'password' => 'poiwao9i',
+                'port' => '587',
+                'encryption' => 'tls'
             ]
         ],
         'db' => require(__DIR__ . '/db.php'),

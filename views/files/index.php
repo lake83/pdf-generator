@@ -33,14 +33,18 @@ $this->title = 'Файлы';
 
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{print} {update} {delete}',
+                'template' => '{print} {send} {update} {delete}',
                 'buttons' => [
                     'print' => function ($url, $model, $key) {
-                        return Html::a('<span class="glyphicon glyphicon-print"></span>', ['print', 'id' => $model->id],
+                        return Html::a('<span class="glyphicon glyphicon-print"></span>', $url,
                             ['title' => 'Опубликовать', 'data-pjax' => 0, 'target' => '_blank']);
+                    },
+                    'send' => function ($url, $model, $key) {
+                        return Html::a('<span class="glyphicon glyphicon-send"></span>', $url,
+                            ['title' => 'E-mail', 'data-pjax' => 0]);
                     }
                 ],
-                'options' => ['width' => '70px']
+                'options' => ['width' => '100px']
             ]
         ]
     ]);
