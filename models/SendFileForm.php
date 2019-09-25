@@ -10,6 +10,8 @@ use yii\base\Model;
 class SendFileForm extends Model
 {
     public $name;
+    public $manager;
+    public $photo;
     public $email;
     public $file;
 
@@ -19,9 +21,9 @@ class SendFileForm extends Model
     public function rules()
     {
         return [
-            [['name', 'email'], 'required'],
-            [['name', 'email'], 'trim'],
-            ['name', 'string', 'max' => 255],
+            [['name', 'manager', 'photo', 'email'], 'required'],
+            [['name', 'manager', 'photo', 'email'], 'trim'],
+            [['name', 'manager', 'photo'], 'string', 'max' => 255],
             ['email', 'email'],
             ['file', 'safe']
         ];
@@ -34,6 +36,8 @@ class SendFileForm extends Model
     {
         return [
             'name' => 'Имя получателя',
+            'manager' => 'Имя менеджера',
+            'photo' => 'Фото менеджера',
             'email' => 'E-mail получателя'
         ];
     }
@@ -45,7 +49,10 @@ class SendFileForm extends Model
      */
     public function sendEmail()
     {
-        return Yii::$app->mailer->compose(['html' => 'proposal-html'], ['name' => $this->name])
+        return Yii::$app->mailer->compose(['html' => 'proposal-html'], [
+                'name' => $this->name,
+                'manager' => $this->manager,
+                'photo' => $this->photo])
             ->setFrom(Yii::$app->params['adminEmail'])
             ->setTo($this->email)
             ->setSubject('Комерческое предложение')

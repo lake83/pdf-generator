@@ -14,6 +14,10 @@ $form = ActiveForm::begin(['layout' => 'horizontal']); ?>
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
     
     <?= $form->field($model, 'email')->textInput() ?>
+    
+    <?= $form->field($model, 'manager')->textInput(['maxlength' => true]) ?>
+    
+    <?= $form->field($model, 'photo')->widget(\app\components\FilemanagerInput::className()) ?>
 
     <div class="box-footer">
         <?= Html::submitButton('Отправить', ['class' => 'btn btn-success']) ?>
