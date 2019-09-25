@@ -12,7 +12,7 @@ $url = Url::base(true);
 <table style="padding:0;width:100%;border-collapse:collapse;border-spacing:0;vertical-align:top;font-family:'Arial';font-size: 18px;">
     <tbody>
         <tr style="font-size: 12px;color: #a8aebf;text-align:left;">
-            <td style="padding: 10px 0 40px 40px;">                 
+            <td style="padding: 10px 0 40px 40px;color: #a8aebf;text-decoration: none;">                 
                 zakaz@promovers.ru
             </td>
             <td style="padding: 10px 0 40px 0;">                 
@@ -27,7 +27,7 @@ $url = Url::base(true);
                 <img src="<?= $url ?>/images/uploads/source/letter/logo.png" width="70%" /> 
             </td>
             <td>                 
-                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 200px;">
+                <div style="color: #074c9c;text-decoration: none;display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 200px;">
                 <img src="<?= $url ?>/images/uploads/source/letter/home.png" width="28px" style="float: left;" /> promovers.ru</div>
             </td>
             <td style="padding-right: 40px;">                 
@@ -44,7 +44,7 @@ $url = Url::base(true);
         </tr>
         <tr style="text-align: center;">
             <td colspan="3">
-                <img src="<?= $url ?>/images/uploads/source/letter/bg.jpg" />
+                <img src="<?= $url ?>/images/uploads/source/letter/bg.jpg" width="100%" />
             </td>
         </tr>
         <tr>
@@ -116,7 +116,7 @@ $url = Url::base(true);
         </tr>
         <tr style="text-align: center;">
             <td colspan="3">
-                <img src="<?= $url ?>/images/uploads/source/letter/bg_2.jpg" />
+                <img src="<?= $url ?>/images/uploads/source/letter/bg_2.jpg" width="100%" />
             </td>
         </tr>
         <tr>
@@ -131,13 +131,13 @@ $url = Url::base(true);
                 <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 240px;background-color: #fddb05;margin-right: 20px;">
                 <img src="<?= $url ?>/images/uploads/source/letter/phone_b.png" width="28px" style="float: left;" /> 8 (495) 988-55-41</div>
                 
-                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 200px;">
+                <div style="color: #000;display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 200px;">
                 <img src="<?= $url ?>/images/uploads/source/letter/home.png" width="28px" style="float: left;" /> promovers.ru</div>
             </td>
         </tr>
         <tr>
             <td colspan="3" style="padding: 40px 0 60px 40px;line-height: 36px;">
-                <img src="<?= $url ?>/images/uploads/source/letter/<?= $photo ? $photo : 'manager.png' ?>" width="100px" style="float: left;padding-right: 30px;" />
+                <img src="<?= $url ?><?= $photo ? trim($photo, '..') : '/images/uploads/source/letter/manager.png' ?>" width="100px" style="float: left;padding-right: 30px;" />
                 <p>
                     <strong>С Уважением, <?= $manager ? $manager : 'Ришат Дунаев' ?>!</strong><br />
                     ООО "ПроМуверс" - Комплексное решение Вашего переезда
@@ -155,7 +155,7 @@ $url = Url::base(true);
                     Калькулятор
                 </div>
                 <div style="display: inline-block;line-height: 36px;">
-                    <u>zakaz@promovers.ru</u><br />
+                    <u style="color: #000;">zakaz@promovers.ru</u><br />
                     Москва, ул. Кольская, дом 7 стр. 7
                 </div>
             </td>
