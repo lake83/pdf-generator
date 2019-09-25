@@ -124,8 +124,7 @@ class FilesController extends AdminController
                 return $this->redirect(['index']);
             }
         }
-        $this->layout = false;
-        return $this->render('@app/mail/proposal-html.php'/*'send', ['model' => $model]*/);
+        return $this->render('send', ['model' => $model]);
     }
     
     /**
