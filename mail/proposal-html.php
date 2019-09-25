@@ -12,8 +12,8 @@ $url = Url::base(true);
 <table style="padding:0;width:100%;border-collapse:collapse;border-spacing:0;vertical-align:top;font-family:'Arial';font-size: 18px;">
     <tbody>
         <tr style="font-size: 12px;color: #a8aebf;text-align:left;">
-            <td style="padding: 10px 0 40px 40px;color: #a8aebf;text-decoration: none;">                 
-                zakaz@promovers.ru
+            <td style="padding: 10px 0 40px 40px;">                 
+                <a style="color: #a8aebf;text-decoration: none;" href="mailto:zakaz@promovers.ru">zakaz@promovers.ru</a>
             </td>
             <td style="padding: 10px 0 40px 0;">                 
                 Москва, ул. Кольская, дом 7 стр. 7
@@ -27,11 +27,11 @@ $url = Url::base(true);
                 <img src="<?= $url ?>/images/uploads/source/letter/logo.png" width="70%" /> 
             </td>
             <td>                 
-                <div style="color: #074c9c;text-decoration: none;display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 200px;">
-                <img src="<?= $url ?>/images/uploads/source/letter/home.png" width="28px" style="float: left;" /> promovers.ru</div>
+                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 160px;">
+                <img src="<?= $url ?>/images/uploads/source/letter/home.png" width="28px" style="float: left;" /> <a style="color: #074c9c;text-decoration: none;" href="http://promovers.ru">promovers.ru</a></div>
             </td>
             <td style="padding-right: 40px;">                 
-                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 240px;">
+                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 190px;">
                 <img src="<?= $url ?>/images/uploads/source/letter/phone.png" width="28px" style="float: left;" /> 8 (495) 988-55-41</div>
             </td>
         </tr>
@@ -69,7 +69,7 @@ $url = Url::base(true);
             <td colspan="3" style="padding: 0 40px;">                 
                 <p><strong>Нашими клиентами являются</strong></p>
                 
-                <div style="width: 20%;height: 100px;float: left;border: 1px solid #eaebf3;border-radius: 5px;margin: 10px;text-align: center;background-repeat: no-repeat;background-position: center center;background-image: url('<?= $url ?>/images/uploads/source/letter/client_1.png');background-size: auto 150px;"></div>
+                <div style="width: 20%;height: 100px;float: left;border: 1px solid #eaebf3;border-radius: 5px;margin: 10px;text-align: center;background-repeat: no-repeat;background-position: center center;background-image: url('<?= $url ?>/images/uploads/source/letter/client_1.png');background-size: auto 120px;"></div>
                 <div style="width: 20%;height: 100px;float: left;border: 1px solid #eaebf3;border-radius: 5px;margin: 10px;text-align: center;background-repeat: no-repeat;background-position: center center;background-image: url('<?= $url ?>/images/uploads/source/letter/client_2.png');background-size: auto 150px;"></div>
                 <div style="width: 20%;height: 100px;float: left;border: 1px solid #eaebf3;border-radius: 5px;margin: 10px;text-align: center;background-repeat: no-repeat;background-position: center center;background-image: url('<?= $url ?>/images/uploads/source/letter/client_3.png');background-size: auto 80px;"></div>
                 <div style="width: 20%;height: 100px;float: left;border: 1px solid #eaebf3;border-radius: 5px;margin: 10px;text-align: center;background-repeat: no-repeat;background-position: center center;background-image: url('<?= $url ?>/images/uploads/source/letter/client_4.png');background-size: auto 80px;"></div>
@@ -87,8 +87,8 @@ $url = Url::base(true);
         </tr>
         <tr>
             <td colspan="3" style="padding: 40px;">
-                <div style="width: 40%;float: left;padding: 20px;"><a style="color: #283383;text-decoration: none;" href="https://promovers.ru">Рекомендательные<br />письма</a></div>
-                <div style="width: 40%;float: left;padding: 20px;"><a style="color: #283383;text-decoration: none;" href="https://promovers.ru/portfolio/">Наши последние<br />работы</a></div>
+                <div style="width: 40%;float: left;padding: 0 20px;"><a style="color: #283383;text-decoration: none;" href="https://promovers.ru">Рекомендательные<br />письма</a></div>
+                <div style="width: 40%;float: left;padding: 0 20px;"><a style="color: #283383;text-decoration: none;" href="https://promovers.ru/portfolio/">Наши последние<br />работы</a></div>
             </td>
         </tr>
         <tr>
@@ -128,16 +128,16 @@ $url = Url::base(true);
         </tr>
         <tr style="font-weight: bold;">
             <td colspan="3" style="padding-left: 40px;">                 
-                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 240px;background-color: #fddb05;margin-right: 20px;">
+                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 190px;background-color: #fddb05;margin-right: 20px;">
                 <img src="<?= $url ?>/images/uploads/source/letter/phone_b.png" width="28px" style="float: left;" /> 8 (495) 988-55-41</div>
                 
-                <div style="color: #000;display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 200px;">
-                <img src="<?= $url ?>/images/uploads/source/letter/home.png" width="28px" style="float: left;" /> promovers.ru</div>
+                <div style="color: #000;display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 160px;">
+                <img src="<?= $url ?>/images/uploads/source/letter/home.png" width="28px" style="float: left;" /> <a style="color: #000;text-decoration: none;" href="http://promovers.ru">promovers.ru</a></div>
             </td>
         </tr>
         <tr>
             <td colspan="3" style="padding: 40px 0 60px 40px;line-height: 36px;">
-                <img src="<?= $url ?><?= $photo ? trim($photo, '..') : '/images/uploads/source/letter/manager.png' ?>" width="100px" style="float: left;padding-right: 30px;" />
+                <img src="<?= $url ?>/images/uploads/source/<?= $photo ? $photo : 'letter/manager.png' ?>" width="100px" style="float: left;padding-right: 30px;" />
                 <p>
                     <strong>С Уважением, <?= $manager ? $manager : 'Ришат Дунаев' ?>!</strong><br />
                     ООО "ПроМуверс" - Комплексное решение Вашего переезда
@@ -150,22 +150,22 @@ $url = Url::base(true);
                     <img style="float: left;padding-top: 3px;" src="<?= $url ?>/images/uploads/source/letter/rectangle.png" width="40px" />
                     Услуги
                 </div>
-                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 200px;padding: 20px;font-size: 24px;margin-right: 50px;">
+                <div style="display: inline-block;padding: 10px 20px;text-align: right;line-height: 30px;width: 200px;padding: 20px;font-size: 24px;margin-right: 50px;">
                     <img style="float: left;margin-top: -5px;" src="<?= $url ?>/images/uploads/source/letter/shape.png" width="30px" />
                     Калькулятор
                 </div>
                 <div style="display: inline-block;line-height: 36px;">
-                    <u style="color: #000;">zakaz@promovers.ru</u><br />
+                    <a style="color: #000;" href="mailto:zakaz@promovers.ru">zakaz@promovers.ru</a><br />
                     Москва, ул. Кольская, дом 7 стр. 7
                 </div>
             </td>
         </tr>
         <tr>
             <td colspan="3" style="padding: 40px;">
-                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 21%;background-color: #e0e3ec;text-align: center;"><img src="<?= $url ?>/images/uploads/source/letter/facebook.png" height="30px" /></div>
-                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 21%;background-color: #e0e3ec;text-align: center;"><img src="<?= $url ?>/images/uploads/source/letter/youtube.png" height="30px" /></div>
-                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 21%;background-color: #e0e3ec;text-align: center;"><img src="<?= $url ?>/images/uploads/source/letter/vk.png" height="30px" /></div>
-                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 21%;background-color: #e0e3ec;text-align: center;"><img src="<?= $url ?>/images/uploads/source/letter/instagram.png" height="30px" /></div>
+                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 0;width: 180px;background-color: #e0e3ec;text-align: center;"><img src="<?= $url ?>/images/uploads/source/letter/facebook.png" height="30px" /></div>
+                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 0;width: 180px;background-color: #e0e3ec;text-align: center;"><img src="<?= $url ?>/images/uploads/source/letter/youtube.png" height="30px" /></div>
+                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 0;width: 180px;background-color: #e0e3ec;text-align: center;"><img src="<?= $url ?>/images/uploads/source/letter/vk.png" height="30px" /></div>
+                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 0;width: 180px;background-color: #e0e3ec;text-align: center;"><img src="<?= $url ?>/images/uploads/source/letter/instagram.png" height="30px" /></div>
             </td>
         </tr>
         <tr>

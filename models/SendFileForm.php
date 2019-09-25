@@ -53,7 +53,7 @@ class SendFileForm extends Model
                 'name' => $this->name,
                 'manager' => $this->manager,
                 'photo' => $this->photo])
-            ->setFrom(Yii::$app->params['adminEmail'])
+            ->setFrom([Yii::$app->params['adminEmail'] => 'promovers.ru'])
             ->setTo($this->email)
             ->setSubject('Комерческое предложение')
             ->attachContent($this->file, ['fileName' => 'proposal.pdf', 'contentType' => 'text/plain'])
