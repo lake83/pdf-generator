@@ -9,7 +9,7 @@ use yii\helpers\Url;
 $url = Url::base(true);
 ?>
 
-<table style="padding:0;width:100%;border-collapse:collapse;border-spacing:0;vertical-align:top;font-family:'Arial';font-size: 18px;">
+<table style="padding:0;width:80%;border-collapse:collapse;border-spacing:0;vertical-align:top;font-family:'Arial';font-size: 18px;margin: 0 auto;">
     <tbody>
         <tr style="font-size: 12px;color: #a8aebf;text-align:left;">
             <td style="padding: 10px 0 40px 40px;">                 

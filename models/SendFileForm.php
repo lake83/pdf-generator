@@ -3,6 +3,7 @@ namespace app\models;
 
 use Yii;
 use yii\base\Model;
+use yii\helpers\Inflector;
 
 /**
  * Send file form
@@ -13,7 +14,9 @@ class SendFileForm extends Model
     public $manager;
     public $photo;
     public $email;
+    public $subject;
     public $file;
+    public $file_title;
 
     /**
      * @inheritdoc
@@ -21,9 +24,10 @@ class SendFileForm extends Model
     public function rules()
     {
         return [
-            [['name', 'manager', 'photo', 'email'], 'required'],
-            [['name', 'manager', 'photo', 'email'], 'trim'],
-            [['name', 'manager', 'photo'], 'string', 'max' => 255],
+            [['name', 'manager', 'photo', 'email', 'subject', 'file_title'], 'required'],
+            [['name', 'manager', 'photo', 'email', 'subject'], 'trim'],
+            [['name', 'manager', 'photo', 'subject'], 'string', 'max' => 255],
+            ['file_title', 'string', 'max' => 50],
             ['email', 'email'],
             ['file', 'safe']
         ];
@@ -38,7 +42,9 @@ class SendFileForm extends Model
             'name' => 'Имя получателя',
             'manager' => 'Имя менеджера',
             'photo' => 'Фото менеджера',
-            'email' => 'E-mail получателя'
+            'email' => 'E-mail получателя',
+            'subject' => 'Тема письма',
+            'file_title' => 'Название файла'
         ];
     }
 
@@ -53,10 +59,10 @@ class SendFileForm extends Model
                 'name' => $this->name,
                 'manager' => $this->manager,
                 'photo' => $this->photo])
-            ->setFrom([Yii::$app->params['adminEmail'] => 'promovers.ru'])
+            ->setFrom([Yii::$app->params['adminEmail'] => 'Promovers.ru'])
             ->setTo($this->email)
-            ->setSubject('Комерческое предложение')
-            ->attachContent($this->file, ['fileName' => 'proposal.pdf', 'contentType' => 'text/plain'])
+            ->setSubject($this->subject)
+            ->attachContent($this->file, ['fileName' => Inflector::slug($this->file_title) . '.pdf', 'contentType' => 'text/plain'])
             ->send();
     }
 }

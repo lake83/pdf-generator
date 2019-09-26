@@ -15,7 +15,7 @@ $form = ActiveForm::begin(['layout' => 'horizontal']); ?>
     
     <div style="margin-bottom: 20px;" class="col-md-offset-3 col-md-9">Для вывода названия комерческого предложения используйте {{CP_title}}</div>
     
-    <?= $form->field($model, 'css')->widget(\app\components\FilemanagerInput::className()) ?>
+    <?= $form->field($model, 'css')->widget(\app\components\FilemanagerInput::className(), ['preview' => false]) ?>
     
     <?= $form->field($model, 'format')->dropDownList($model->getFormats(), ['class' => 'form-control', 'prompt' => '- выбрать -']) ?>
     

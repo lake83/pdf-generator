@@ -38,11 +38,10 @@ class FilemanagerInput extends InputWidget
     public function run()
     {
         if ($this->hasModel()) {
-            if ($this->preview) {
-                echo '<div class="form-group"' . (empty($this->model->{$this->attribute}) ? ' style="display:none"' : '') . '>
-                          <div id="preview" class="control-label col-sm-3">' . $this->model->{$this->attribute} . '</div>
-                      </div>';
-            }
+            echo '<div class="form-group"' . (empty($this->model->{$this->attribute}) ? ' style="display:none"' : '') . '>
+                <div id="preview" class="control-label col-sm-3">' . ($this->preview ? Html::img(SiteHelper::resized_image($this->model->{$this->attribute}, 120, 100)) : $this->model->{$this->attribute}) . '</div>
+            </div>';
+                      
             if (!ArrayHelper::getValue($this->options, 'id')) {
                 $this->options['id'] = Html::getInputId($this->model, $this->attribute);
             }

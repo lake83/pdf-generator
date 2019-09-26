@@ -11,11 +11,15 @@ $this->title = 'Отправка письма';
 
 $form = ActiveForm::begin(['layout' => 'horizontal']); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-    
     <?= $form->field($model, 'email')->textInput() ?>
     
+    <?= $form->field($model, 'subject')->textInput(['maxlength' => true]) ?>
+    
+    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    
     <?= $form->field($model, 'manager')->textInput(['maxlength' => true]) ?>
+    
+    <?= $form->field($model, 'file_title')->textInput(['maxlength' => true]) ?>
     
     <?= $form->field($model, 'photo')->widget(\app\components\FilemanagerInput::className()) ?>
 
