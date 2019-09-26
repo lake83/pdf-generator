@@ -9,7 +9,7 @@ use yii\helpers\Url;
 $url = Url::base(true);
 ?>
 
-<table style="padding:0;width:80%;border-collapse:collapse;border-spacing:0;vertical-align:top;font-family:'Arial';font-size: 18px;margin: 0 auto;">
+<table style="padding:0;width:850px;border-collapse:collapse;border-spacing:0;vertical-align:top;font-family:'Arial';font-size: 18px;margin: 0 auto;">
     <tbody>
         <tr style="font-size: 12px;color: #a8aebf;text-align:left;">
             <td style="padding: 10px 0 40px 40px;">                 
@@ -23,7 +23,7 @@ $url = Url::base(true);
             </td>
         </tr>
         <tr style="color: #074c9c;font-weight: bold;">
-            <td style="padding-left: 40px;width: 40%;">                 
+            <td style="padding-left: 40px;width: 50%;">                 
                 <img src="<?= $url ?>/images/uploads/source/letter/logo.png" width="70%" /> 
             </td>
             <td>                 
@@ -69,15 +69,15 @@ $url = Url::base(true);
             <td colspan="3" style="padding: 0 40px;">                 
                 <p><strong>Нашими клиентами являются</strong></p>
                 
-                <div style="width: 20%;height: 100px;float: left;border: 1px solid #eaebf3;border-radius: 5px;margin: 10px;text-align: center;background-repeat: no-repeat;background-position: center center;background-image: url('<?= $url ?>/images/uploads/source/letter/client_1.png');background-size: auto 120px;"></div>
+                <div style="width: 20%;height: 100px;float: left;border: 1px solid #eaebf3;border-radius: 5px;margin: 10px;text-align: center;background-repeat: no-repeat;background-position: center center;background-image: url('<?= $url ?>/images/uploads/source/letter/client_1.png');background-size: auto 110px;"></div>
                 <div style="width: 20%;height: 100px;float: left;border: 1px solid #eaebf3;border-radius: 5px;margin: 10px;text-align: center;background-repeat: no-repeat;background-position: center center;background-image: url('<?= $url ?>/images/uploads/source/letter/client_2.png');background-size: auto 150px;"></div>
                 <div style="width: 20%;height: 100px;float: left;border: 1px solid #eaebf3;border-radius: 5px;margin: 10px;text-align: center;background-repeat: no-repeat;background-position: center center;background-image: url('<?= $url ?>/images/uploads/source/letter/client_3.png');background-size: auto 80px;"></div>
-                <div style="width: 20%;height: 100px;float: left;border: 1px solid #eaebf3;border-radius: 5px;margin: 10px;text-align: center;background-repeat: no-repeat;background-position: center center;background-image: url('<?= $url ?>/images/uploads/source/letter/client_4.png');background-size: auto 80px;"></div>
+                <div style="width: 20%;height: 100px;float: left;border: 1px solid #eaebf3;border-radius: 5px;margin: 10px;text-align: center;background-repeat: no-repeat;background-position: center center;background-image: url('<?= $url ?>/images/uploads/source/letter/client_4.png');background-size: auto 65px;"></div>
                 
                 <div style="width: 20%;height: 100px;float: left;border: 1px solid #eaebf3;border-radius: 5px;margin: 10px;text-align: center;background-repeat: no-repeat;background-position: center center;background-image: url('<?= $url ?>/images/uploads/source/letter/client_5.png');background-size: auto 80px;"></div>
                 <div style="width: 20%;height: 100px;float: left;border: 1px solid #eaebf3;border-radius: 5px;margin: 10px;text-align: center;background-repeat: no-repeat;background-position: center center;background-image: url('<?= $url ?>/images/uploads/source/letter/client_6.png');background-size: auto 150px;"></div>
                 <div style="width: 20%;height: 100px;float: left;border: 1px solid #eaebf3;border-radius: 5px;margin: 10px;text-align: center;background-repeat: no-repeat;background-position: center center;background-image: url('<?= $url ?>/images/uploads/source/letter/client_7.png');background-size: auto 80px;"></div>
-                <div style="width: 20%;height: 100px;float: left;border: 1px solid #eaebf3;border-radius: 5px;margin: 10px;text-align: center;background-repeat: no-repeat;background-position: center center;background-image: url('<?= $url ?>/images/uploads/source/letter/client_8.png');background-size: auto 70px;"></div>
+                <div style="width: 20%;height: 100px;float: left;border: 1px solid #eaebf3;border-radius: 5px;margin: 10px;text-align: center;background-repeat: no-repeat;background-position: center center;background-image: url('<?= $url ?>/images/uploads/source/letter/client_8.png');background-size: auto 60px;"></div>
             </td>
         </tr>
         <tr>
@@ -146,11 +146,11 @@ $url = Url::base(true);
         </tr>
         <tr>
             <td colspan="3" style="padding: 40px;">
-                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 150px;background-color: #283383;margin-right: 50px;padding: 20px;color: #fff;font-size: 24px;">
+                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 150px;background-color: #283383;margin-right: 15px;padding: 20px;color: #fff;font-size: 24px;">
                     <img style="float: left;padding-top: 3px;" src="<?= $url ?>/images/uploads/source/letter/rectangle.png" width="40px" />
                     Услуги
                 </div>
-                <div style="display: inline-block;padding: 10px 20px;text-align: right;line-height: 30px;width: 200px;padding: 20px;font-size: 24px;margin-right: 50px;">
+                <div style="display: inline-block;padding: 10px 20px;text-align: right;line-height: 30px;width: 200px;padding: 20px;font-size: 24px;margin-right: 20px;">
                     <img style="float: left;margin-top: -5px;" src="<?= $url ?>/images/uploads/source/letter/shape.png" width="30px" />
                     Калькулятор
                 </div>
@@ -162,10 +162,10 @@ $url = Url::base(true);
         </tr>
         <tr>
             <td colspan="3" style="padding: 40px;">
-                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 0;width: 180px;background-color: #e0e3ec;text-align: center;"><img src="<?= $url ?>/images/uploads/source/letter/facebook.png" height="30px" /></div>
-                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 0;width: 180px;background-color: #e0e3ec;text-align: center;"><img src="<?= $url ?>/images/uploads/source/letter/youtube.png" height="30px" /></div>
-                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 0;width: 180px;background-color: #e0e3ec;text-align: center;"><img src="<?= $url ?>/images/uploads/source/letter/vk.png" height="30px" /></div>
-                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 0;width: 180px;background-color: #e0e3ec;text-align: center;"><img src="<?= $url ?>/images/uploads/source/letter/instagram.png" height="30px" /></div>
+                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 0;width: 145px;background-color: #e0e3ec;text-align: center;"><img src="<?= $url ?>/images/uploads/source/letter/facebook.png" height="30px" /></div>
+                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 0;width: 145px;background-color: #e0e3ec;text-align: center;"><img src="<?= $url ?>/images/uploads/source/letter/youtube.png" height="30px" /></div>
+                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 0;width: 145px;background-color: #e0e3ec;text-align: center;"><img src="<?= $url ?>/images/uploads/source/letter/vk.png" height="30px" /></div>
+                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 0;width: 145px;background-color: #e0e3ec;text-align: center;"><img src="<?= $url ?>/images/uploads/source/letter/instagram.png" height="30px" /></div>
             </td>
         </tr>
         <tr>
