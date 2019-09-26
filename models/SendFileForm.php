@@ -62,7 +62,7 @@ class SendFileForm extends Model
             ->setFrom([Yii::$app->params['adminEmail'] => 'Promovers.ru'])
             ->setTo($this->email)
             ->setSubject($this->subject)
-            ->attachContent($this->file, ['fileName' => Inflector::slug($this->file_title) . '.pdf', 'contentType' => 'text/plain'])
+            ->attachContent($this->file, ['fileName' => Inflector::slug($this->file_title) . '.pdf', 'contentType' => 'application/x-pdf'])
             ->send();
     }
 }

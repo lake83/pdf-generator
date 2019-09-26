@@ -8,6 +8,9 @@ use yii\helpers\Url;
 
 $url = Url::base(true);
 ?>
+<span style="display: none !important;font-size: 0px;line-height: 0;color: #fff;visibility: hidden;opacity: 0;height: 0;width: 0;">
+    Здравствуйте. Прикрепили для Вас на изучение наше коммерческое предложение.
+</span>
 
 <table style="padding:0;width:850px;border-collapse:collapse;border-spacing:0;vertical-align:top;font-family:'Arial';font-size: 18px;margin: 0 auto;">
     <tbody>
@@ -23,8 +26,8 @@ $url = Url::base(true);
             </td>
         </tr>
         <tr style="color: #074c9c;font-weight: bold;">
-            <td style="padding-left: 40px;width: 50%;">                 
-                <img src="<?= $url ?>/images/uploads/source/letter/logo.png" width="70%" /> 
+            <td style="padding-left: 40px;width: 40%;">                 
+                <img src="<?= $url ?>/images/uploads/source/letter/logo.png" width="80%" /> 
             </td>
             <td>                 
                 <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 160px;">
@@ -146,11 +149,11 @@ $url = Url::base(true);
         </tr>
         <tr>
             <td colspan="3" style="padding: 40px;">
-                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 150px;background-color: #283383;margin-right: 15px;padding: 20px;color: #fff;font-size: 24px;">
+                <div style="display: inline-block;padding: 10px 20px;border: 1px solid #eaebf3;border-radius: 5px;text-align: right;line-height: 30px;width: 150px;background-color: #283383;margin-right: 10px;padding: 20px;color: #fff;font-size: 24px;">
                     <img style="float: left;padding-top: 3px;" src="<?= $url ?>/images/uploads/source/letter/rectangle.png" width="40px" />
                     Услуги
                 </div>
-                <div style="display: inline-block;padding: 10px 20px;text-align: right;line-height: 30px;width: 200px;padding: 20px;font-size: 24px;margin-right: 20px;">
+                <div style="display: inline-block;padding: 10px 20px;text-align: right;line-height: 30px;width: 200px;padding: 20px;font-size: 24px;margin-right: 10px;">
                     <img style="float: left;margin-top: -5px;" src="<?= $url ?>/images/uploads/source/letter/shape.png" width="30px" />
                     Калькулятор
                 </div>
