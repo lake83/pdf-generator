@@ -5,4 +5,4 @@
 
 $this->title = 'Редактирование файла: ' . $model->name;
 
-echo $this->render('_values', ['model' => $model, 'values' => $values]) ?>
+echo $this->render('_values', ['model' => $model]) ?>
