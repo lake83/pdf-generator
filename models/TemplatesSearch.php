@@ -17,7 +17,7 @@ class TemplatesSearch extends Templates
     public function rules()
     {
         return [
-            [['id', 'format', 'created_at', 'updated_at'], 'integer'],
+            [['id', 'format', 'is_email', 'created_at', 'updated_at'], 'integer'],
             [['name', 'orientation', 'content', 'css'], 'safe'],
         ];
     }
@@ -52,6 +52,7 @@ class TemplatesSearch extends Templates
         $query->andFilterWhere([
             'id' => $this->id,
             'format' => $this->format,
+            'is_email' => $this->is_email,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ]);

@@ -17,6 +17,7 @@ use kartik\mpdf\Pdf;
  * @property string $css
  * @property int $format
  * @property string $orientation
+ * @property integer $is_email
  * @property int $created_at
  * @property int $updated_at
  */
@@ -48,7 +49,8 @@ class Templates extends \yii\db\ActiveRecord
         return [
             [['name', 'content', 'format', 'orientation'], 'required'],
             ['content', 'string'],
-            [['format', 'created_at', 'updated_at'], 'integer'],
+            [['format', 'is_email', 'created_at', 'updated_at'], 'integer'],
+            ['is_email', 'default', 'value' => 0],
             ['orientation', 'string', 'max' => 1],
             [['name', 'css'], 'string', 'max' => 255]
         ];
@@ -66,6 +68,7 @@ class Templates extends \yii\db\ActiveRecord
             'css' => 'Файл CSS',
             'format' => 'Формат',
             'orientation' => 'Ориентация',
+            'is_email' => 'Отправка по E-mail',
             'created_at' => 'Создано',
             'updated_at' => 'Изменено'
         ];

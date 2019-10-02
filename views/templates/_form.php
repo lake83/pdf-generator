@@ -20,6 +20,8 @@ $form = ActiveForm::begin(['layout' => 'horizontal']); ?>
     <?= $form->field($model, 'format')->dropDownList($model->getFormats(), ['class' => 'form-control', 'prompt' => '- выбрать -']) ?>
     
     <?= $form->field($model, 'orientation')->dropDownList($model->getOrientations(), ['class' => 'form-control', 'prompt' => '- выбрать -']) ?>
+    
+    <?= $form->field($model, 'is_email')->checkbox() ?>
 
     <div class="box-footer">
         <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Сохранить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

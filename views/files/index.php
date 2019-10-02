@@ -44,6 +44,11 @@ $this->title = 'Файлы';
                             ['title' => 'E-mail', 'data-pjax' => 0]);
                     }
                 ],
+                'visibleButtons' => [
+                    'send' => function ($model, $key, $index) {
+                        return $model->template->is_email;
+                    }
+                ],
                 'options' => ['width' => '100px']
             ]
         ]
