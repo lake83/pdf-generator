@@ -3,15 +3,17 @@
 use yii\helpers\Html;
 use kartik\grid\GridView;
 use app\models\Templates;
+use app\models\User;
+use app\components\SiteHelper;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\FilesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Файлы';
+$this->title = 'Документы';
 ?>
 
-<p><?= Html::a('Создать файл', ['create'], ['class' => 'btn btn-success']) ?></p>
+<p><?= Html::a('Создать документ', ['create'], ['class' => 'btn btn-success']) ?></p>
 
 <?=  GridView::widget([
     'layout' => '{items}{pager}',
@@ -30,6 +32,14 @@ $this->title = 'Файлы';
                 }
             ],
             'name',
+            [
+                'attribute' => 'user_id',
+                'filter' => Html::activeDropDownList($searchModel, 'user_id', User::getAll(), ['class' => 'form-control', 'prompt' => '- выбрать -']),
+                'value' => function ($model, $index, $widget) {
+                    return $model->user->username;
+                }
+            ],
+            SiteHelper::created_at($searchModel),
 
             [
                 'class' => 'yii\grid\ActionColumn',

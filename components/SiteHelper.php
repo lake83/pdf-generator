@@ -97,8 +97,8 @@ class SiteHelper
     public static function redirectByRole($status)
     {
         switch($status) {
-            case modelUser::ROLE_ADMIN: $redirect = ['admin/user/index']; break;
-            default: $redirect = ['site/index']; break;
+            case modelUser::ROLE_ADMIN: $redirect = ['users/index']; break;
+            default: $redirect = ['files/index']; break;
         }
         return $redirect;
     }

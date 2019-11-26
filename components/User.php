@@ -34,4 +34,12 @@ class User extends \yii\web\User
     {
         return Yii::$app->user->identity->username;
     }
+    
+    /**
+     * User is admin
+     */
+    public function getIsAdmin()
+    {
+        return Yii::$app->user->identity->status == \app\models\User::ROLE_ADMIN ? true : false;
+    }
 }

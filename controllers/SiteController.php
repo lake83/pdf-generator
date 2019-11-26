@@ -11,6 +11,7 @@ use app\models\ResetPasswordForm;
 use app\models\RemindForm;
 use yii\web\BadRequestHttpException;
 use yii\base\InvalidParamException;
+use app\components\SiteHelper;
 
 class SiteController extends Controller
 {
@@ -62,11 +63,11 @@ class SiteController extends Controller
     public function actionIndex()
     {
         if (!Yii::$app->user->isGuest) {
-            return $this->redirect(['users/index']);
+            return $this->redirect(SiteHelper::redirectByRole(Yii::$app->user->status));
         }
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->redirect(['users/index']);
+        if ($model->load(Yii::$app->request->post()) && ($status = $model->login())) {
+            return $this->redirect(SiteHelper::redirectByRole($status));
         }
         $model->password = '';
         return $this->render('index', ['model' => $model]);

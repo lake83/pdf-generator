@@ -17,7 +17,8 @@ class FilesSearch extends Files
     public function rules()
     {
         return [
-            [['id', 'template_id'], 'integer'],
+            [['id', 'template_id', 'user_id'], 'integer'],
+            ['created_at', 'date', 'format' => 'd.m.Y'],
             [['name', 'filds_value'], 'safe']
         ];
     }
@@ -51,7 +52,9 @@ class FilesSearch extends Files
         }
         $query->andFilterWhere([
             'id' => $this->id,
-            'template_id' => $this->template_id
+            'template_id' => $this->template_id,
+            'user_id' => $this->user_id,
+            'FROM_UNIXTIME(created_at, "%d.%m.%Y")' => $this->created_at
         ]);
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'filds_value', $this->filds_value]);

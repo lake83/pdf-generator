@@ -11,9 +11,9 @@ app\assets\AdminAsset::register($this);
     'options' => ['class' => 'sidebar-menu', 'data-widget' => 'tree'],
     'encodeLabels' => false,
     'items' => [
-        ['label' => 'Пользователи', 'url' => ['users/index'], 'icon' => 'users'],
-        ['label' => 'Шаблоны', 'url' => ['templates/index'], 'icon' => 'list-alt'],
-        ['label' => 'Файлы', 'url' => ['files/index'], 'icon' => 'file']
+        ['label' => 'Пользователи', 'url' => ['users/index'], 'icon' => 'users', 'visible' => Yii::$app->user->isAdmin],
+        ['label' => 'Шаблоны', 'url' => ['templates/index'], 'icon' => 'list-alt', 'visible' => Yii::$app->user->isAdmin],
+        ['label' => 'Документы', 'url' => ['files/index'], 'icon' => 'file']
     ]
 ]);	
 ?>

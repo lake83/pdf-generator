@@ -8,6 +8,8 @@ use yii\web\ForbiddenHttpException;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 use yii\behaviors\TimestampBehavior;
+use yii\helpers\ArrayHelper;
+use yii\caching\TagDependency;
 
 /**
  * User model
@@ -117,6 +119,26 @@ class User extends ActiveRecord implements IdentityInterface
             throw new ForbiddenHttpException('Должен быть хотя бы один действующий администратор.');
         }
         return parent::beforeDelete();
+    }
+    
+    /**
+     * @inheritdoc
+     */
+    public function afterSave($insert, $changedAttributes)
+    {
+        TagDependency::invalidate(Yii::$app->cache, 'users');
+        
+        return parent::afterSave($insert, $changedAttributes);
+    }
+    
+    /**
+     * @inheritdoc
+     */
+    public function afterDelete()
+    {
+        TagDependency::invalidate(Yii::$app->cache, 'users');
+        
+        parent::afterDelete();
     }
     
     /**
@@ -260,5 +282,17 @@ class User extends ActiveRecord implements IdentityInterface
             self::ROLE_USER => 'Пользователь'
         ];
         return is_null($key) ? $array : $array[$key];
+    }
+    
+    /**
+     * Возвращает список пользователей
+     * 
+     * @return array
+     */
+    public static function getAll()
+    {
+        return Yii::$app->cache->getOrSet('users', function () {
+            return ArrayHelper::map(self::find()->select('id,username')->all(), 'id', 'username');
+        }, 0, new TagDependency(['tags' => 'users']));
     }
 }
