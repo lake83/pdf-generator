@@ -22,6 +22,7 @@ $form = ActiveForm::begin(['layout' => 'horizontal']); ?>
     <div class="receiver"<?= !$model->isNewRecord && $model->template->is_email ? '' : ' style="display:none"' ?>>
         <?= $form->field($model, 'receiver_email')->textInput() ?>
         <?= $form->field($model, 'receiver_name')->textInput() ?>
+        <?= $form->field($model, 'receiver_phone')->widget(\yii\widgets\MaskedInput::className(), ['mask' => '+7 (999) 999-99-99']) ?>
     </div>
     
     <?php 

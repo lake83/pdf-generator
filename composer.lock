@@ -4,8 +4,51 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "41367de95d6e12dcb07d85700b4d07b4",
+    "content-hash": "cf0a50e84326c23de6ecb6d9bcbf6e8c",
     "packages": [
+        {
+            "name": "alexeevdv/yii2-sms-ru",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alexeevdv/yii2-sms-ru.git",
+                "reference": "c89414eb39fba8c4ba350ed939c0314f43baa530"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alexeevdv/yii2-sms-ru/zipball/c89414eb39fba8c4ba350ed939c0314f43baa530",
+                "reference": "c89414eb39fba8c4ba350ed939c0314f43baa530",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "alexeevdv\\sms\\ru\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "alexeevdv",
+                    "email": "mail@alexeevdv.ru",
+                    "homepage": "https://alexeevdv.ru/"
+                }
+            ],
+            "description": "Yii2 wrapper for sms.ru API",
+            "keywords": [
+                "api",
+                "sms",
+                "sms.ru",
+                "yii2"
+            ],
+            "time": "2017-11-28T14:27:16+00:00"
+        },
         {
             "name": "almasaeed2010/adminlte",
             "version": "v2.4.18",
@@ -1859,7 +1902,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "kartik-v/yii2-mpdf": 20
+        "kartik-v/yii2-mpdf": 20,
+        "alexeevdv/yii2-sms-ru": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

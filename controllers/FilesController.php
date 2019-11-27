@@ -6,6 +6,7 @@ use Yii;
 use yii\web\NotFoundHttpException;
 use kartik\mpdf\Pdf;
 use app\models\SendFileForm;
+use alexeevdv\sms\ru\Sms;
 
 /**
  * FilesController implements the CRUD actions for Files model.
@@ -129,7 +130,20 @@ class FilesController extends AdminController
             $model->file = $this->actionPrint($id, Pdf::DEST_STRING);
             
             if ($model->sendEmail()) {
-                Yii::$app->session->setFlash('success', 'Письмо отправлено.');
+                $session = Yii::$app->session;
+                $session->setFlash('success', 'Письмо отправлено.');
+                
+                if ($document->receiver_phone) {
+                    $response = Yii::$app->sms->send(new Sms([
+                        'to' => $document->receiver_phone,
+                        'text' => 'Вам на почту отправлено коммерческое предложение от ' . Yii::$app->name
+                    ]));
+                    if ($response->code == 100) {
+                        $session->setFlash('info', 'SMS отправлено.');
+                    } else {
+                        $session->setFlash('error', 'SMS не отправлено.');
+                    }
+                }
                 return $this->redirect(['index']);
             }
         }

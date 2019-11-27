@@ -1,7 +1,7 @@
 <?php
 $config = [
     'id' => 'basic',
-    'name' => 'PDF Generator',
+    'name' => 'ПИТ',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['app\config\settings'],
     'language' => 'ru',
@@ -39,6 +39,10 @@ $config = [
                 'port' => '587',
                 'encryption' => 'tls'
             ]
+        ],
+        'sms' => [
+            'class' => 'alexeevdv\sms\ru\Client',
+            'api_id' => 'YOUR_API_ID'
         ],
         'db' => require(__DIR__ . '/db.php'),
         'urlManager' => [

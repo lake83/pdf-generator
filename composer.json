@@ -25,7 +25,8 @@
         "kartik-v/yii2-widget-growl": "*",
         "xvs32x/tinymce-responsivefilemanager": "^1.0",
         "kartik-v/yii2-mpdf": "dev-master",
-        "yiisoft/yii2-imagine": "^2.2"
+        "yiisoft/yii2-imagine": "^2.2",
+        "alexeevdv/yii2-sms-ru": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

@@ -16,6 +16,7 @@ class m190905_083915_files extends Migration
             'name' => $this->string()->notNull(),
             'receiver_email' => $this->string(100)->notNull(),
             'receiver_name' => $this->string()->notNull(),
+            'receiver_phone' => $this->string(20)->notNull(),
             'filds_value' => $this->text()->notNull(),
             'created_at' => $this->integer()->notNull()
         ], $this->db->driverName === 'mysql' ? 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB' : null);

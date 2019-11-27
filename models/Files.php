@@ -14,6 +14,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string $name
  * @property string $receiver_email
  * @property string $receiver_name
+ * @property string $receiver_phone
  * @property string $filds_value
  * @property int $created_at
  */
@@ -54,8 +55,10 @@ class Files extends \yii\db\ActiveRecord
             [['template_id', 'user_id', 'created_at'], 'integer'],
             ['receiver_email', 'string', 'max' => 100],
             [['name', 'receiver_name'], 'string', 'max' => 255],
+            ['receiver_phone', 'string', 'max' => 20],
             [['filds_value', 'rows', 'values'], 'safe'],
             ['receiver_name', 'match', 'pattern' => '/^(([a-z\(\)\s]+)|([а-яё\(\)\s]+))$/isu'],
+            ['receiver_phone', 'match', 'pattern' => '/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/'],
             ['receiver_email', 'email'],
             [['receiver_email', 'receiver_name'], 'required', 'when' => function($model) {
                     return $model->template->is_email;
@@ -78,6 +81,7 @@ class Files extends \yii\db\ActiveRecord
             'name' => 'Название компании',
             'receiver_email' => 'E-mail получателя',
             'receiver_name' => 'Имя получателя',
+            'receiver_phone' => 'Телефон получателя',
             'filds_value' => 'Значения',
             'rows' => 'Поле шаблона',
             'created_at' => 'Создано'
