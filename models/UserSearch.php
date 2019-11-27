@@ -20,7 +20,7 @@ class UserSearch extends User
         return [
             [['id', 'status', 'is_active'], 'integer'],
             [['created_at', 'updated_at'], 'date', 'format' => 'd.m.Y'],
-            [['username', 'email'], 'safe'],
+            [['username', 'email', 'fio', 'image'], 'safe'],
         ];
     }
 
@@ -29,7 +29,6 @@ class UserSearch extends User
      */
     public function scenarios()
     {
-        // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
 
@@ -44,21 +43,14 @@ class UserSearch extends User
     {
         $query = User::find();
 
-        // add conditions that should always apply here
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
-
         $this->load($params);
 
         if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
             return $dataProvider;
         }
-
-        // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
             'status' => $this->status,
@@ -68,7 +60,9 @@ class UserSearch extends User
         ]);
 
         $query->andFilterWhere(['like', 'username', $this->username])
-            ->andFilterWhere(['like', 'email', $this->email]);
+            ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['like', 'fio', $this->fio])
+            ->andFilterWhere(['like', 'image', $this->image]);
 
         return $dataProvider;
     }

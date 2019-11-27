@@ -16,6 +16,8 @@ use yii\caching\TagDependency;
  *
  * @property integer $id
  * @property string $username
+ * @property string $fio
+ * @property string $image
  * @property integer $status
  * @property string $password_hash
  * @property string $password_reset_token
@@ -65,7 +67,7 @@ class User extends ActiveRecord implements IdentityInterface
             
             ['email', 'required'],
             ['email', 'email'],
-            [['email'], 'string', 'max' => 255],
+            [['email', 'fio', 'image'], 'string', 'max' => 255],
             
             [['username', 'email'], 'trim'],
             [['password_hash', 'new_password'], 'string', 'min' => 6],
@@ -83,6 +85,8 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             'id' => 'ID',
             'username' => 'Имя',
+            'fio' => 'ФИО',
+            'image' => 'Фото',
             'email' => 'E-mail',
             'password_hash' => 'Пароль',
             'new_password' => 'Новый пароль',

@@ -12,6 +12,8 @@ use yii\behaviors\TimestampBehavior;
  * @property int $template_id
  * @property int $user_id
  * @property string $name
+ * @property string $receiver_email
+ * @property string $receiver_name
  * @property string $filds_value
  * @property int $created_at
  */
@@ -50,8 +52,17 @@ class Files extends \yii\db\ActiveRecord
             [['template_id', 'name'], 'required'],
             //['rows', 'required', 'on' => 'second'],
             [['template_id', 'user_id', 'created_at'], 'integer'],
-            ['name', 'string', 'max' => 255],
-            [['filds_value', 'rows', 'values'], 'safe']
+            ['receiver_email', 'string', 'max' => 100],
+            [['name', 'receiver_name'], 'string', 'max' => 255],
+            [['filds_value', 'rows', 'values'], 'safe'],
+            ['receiver_name', 'match', 'pattern' => '/^(([a-z\(\)\s]+)|([а-яё\(\)\s]+))$/isu'],
+            ['receiver_email', 'email'],
+            [['receiver_email', 'receiver_name'], 'required', 'when' => function($model) {
+                    return $model->template->is_email;
+                }, 'whenClient' => "function (attribute, value) {
+                    return $('.receiver').is(':visible');
+                }"
+            ]
         ];
     }
 
@@ -65,6 +76,8 @@ class Files extends \yii\db\ActiveRecord
             'template_id' => 'Используемый шаблон',
             'user_id' => 'Исполнитель',
             'name' => 'Название компании',
+            'receiver_email' => 'E-mail получателя',
+            'receiver_name' => 'Имя получателя',
             'filds_value' => 'Значения',
             'rows' => 'Поле шаблона',
             'created_at' => 'Создано'

@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use kartik\grid\GridView;
+use app\components\SiteHelper;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\UserSearch */
@@ -21,6 +22,14 @@ $this->title = 'Пользователи';
     'columns' => [
         ['class' => 'yii\grid\SerialColumn'],
 
+            [
+                'attribute' => 'image',
+                'format' => 'raw',
+                'filter' => false,
+                'value' => function ($model, $index, $widget) {
+                    return Html::img(SiteHelper::resized_image($model->image, 70, null), ['width' => 70]);
+                }
+            ],
             'username',
             'email:email',
             [

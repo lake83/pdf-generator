@@ -19,6 +19,11 @@ $form = ActiveForm::begin(['layout' => 'horizontal']); ?>
         <div class="col-sm-6"><?= $model->name ?></div>
     </div>
     
+    <div class="receiver"<?= !$model->isNewRecord && $model->template->is_email ? '' : ' style="display:none"' ?>>
+        <?= $form->field($model, 'receiver_email')->textInput() ?>
+        <?= $form->field($model, 'receiver_name')->textInput() ?>
+    </div>
+    
     <?php 
     echo Html::activeHiddenInput($model, 'template_id');
     echo Html::activeHiddenInput($model, 'name');

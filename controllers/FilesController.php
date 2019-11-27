@@ -114,7 +114,16 @@ class FilesController extends AdminController
      */
     public function actionSend($id)
     {
+        $document = $this->findModel($id);
+        $user = Yii::$app->user->identity;
+        
         $model = new SendFileForm;
+        $model->name = $document->receiver_name;
+        $model->subject = 'Коммерческое предложение для ' . $document->name;
+        $model->manager = $user->fio;
+        $model->photo = $user->image;
+        $model->email = $document->receiver_email;        
+        $model->file_title = 'commercial_offer_' . date('dmY');
         
         if ($model->load(Yii::$app->request->post())) {
             $model->file = $this->actionPrint($id, Pdf::DEST_STRING);

@@ -9,6 +9,8 @@ class m170301_120109_user extends Migration
         $this->createTable('user', [
             'id' => $this->primaryKey(),
             'username' => $this->string(100)->notNull(),
+            'fio' => $this->string()->notNull(),
+            'image' => $this->string()->notNull(),
             'auth_key' => $this->string(32)->notNull(),
             'password_hash' => $this->string()->notNull(),
             'password_reset_token' => $this->string()->defaultValue(null),
@@ -21,6 +23,8 @@ class m170301_120109_user extends Migration
         
         $this->insert('user', [
             'username' => 'admin',
+            'fio' => 'Administrator',
+            'image' => '',
             'auth_key' => Yii::$app->security->generateRandomString(),
             'password_hash' => Yii::$app->security->generatePasswordHash('admin'),
             'password_reset_token' => null,

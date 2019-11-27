@@ -19,7 +19,7 @@ class FilesSearch extends Files
         return [
             [['id', 'template_id', 'user_id'], 'integer'],
             ['created_at', 'date', 'format' => 'd.m.Y'],
-            [['name', 'filds_value'], 'safe']
+            [['name', 'filds_value', 'receiver_email', 'receiver_name'], 'safe']
         ];
     }
 
@@ -57,7 +57,9 @@ class FilesSearch extends Files
             'FROM_UNIXTIME(created_at, "%d.%m.%Y")' => $this->created_at
         ]);
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'filds_value', $this->filds_value]);
+            ->andFilterWhere(['like', 'filds_value', $this->filds_value])
+            ->andFilterWhere(['like', 'receiver_email', $this->receiver_email])
+            ->andFilterWhere(['like', 'receiver_name', $this->receiver_name]);
 
         return $dataProvider;
     }

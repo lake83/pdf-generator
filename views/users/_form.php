@@ -9,7 +9,11 @@ use yii\bootstrap\ActiveForm;
 
 $form = ActiveForm::begin(['layout' => 'horizontal']); ?>
 
+    <?= $form->field($model, 'image')->widget(\app\components\FilemanagerInput::className()) ?>
+    
     <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
+    
+    <?= $form->field($model, 'fio')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 

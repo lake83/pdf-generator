@@ -42,7 +42,7 @@ class TemplatesSearch extends Templates
         $query = Templates::find();
 
         $dataProvider = new ActiveDataProvider([
-            'query' => $query,
+            'query' => $query
         ]);
         $this->load($params);
 
