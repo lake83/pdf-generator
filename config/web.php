@@ -42,7 +42,7 @@ $config = [
         ],
         'sms' => [
             'class' => 'alexeevdv\sms\ru\Client',
-            'api_id' => 'YOUR_API_ID'
+            'api_id' => '39CAF925-4870-82FC-85CB-5887577F2D03'
         ],
         'db' => require(__DIR__ . '/db.php'),
         'urlManager' => [
