@@ -9,6 +9,7 @@ class RedactorTinymce extends Tinymce
         'plugins' => [
             'advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code contextmenu table responsivefilemanager'
         ],
+        'extended_valid_elements' => 'svg[*],path[*]',
         'toolbar' => 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | code | removeformat',
         'language' => 'ru',
         'filemanager_title' => 'Файловый менеджер',
