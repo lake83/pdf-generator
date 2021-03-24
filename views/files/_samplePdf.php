@@ -1,6 +1,6 @@
 <div class="background"><img src="../images/uploads/source/background.jpg" /></div>
 <div class="address">Набережные Челны, ул. Промышленная, 20</div>
-<div class="info">ООО «АВТОГИГАНТ-НЧ»ИНН 1650341867КПП 165001001</div>
+<div class="info">ООО «АВТОГИГАНТ-НЧ» ИНН 1650341867 КПП 165001001</div>
 <div class="small">Контактный номер</div>
 <div class="contact_addr">8 800 444-33-16</div>
 <div class="small small_1">Посетите наш сайт</div>
@@ -10,6 +10,9 @@
 <h2>Коммерческое предложение</h2>
 <div class="text">ООО «АВТОГИГАНТ-НЧ» - предлагает Вашему вниманию автотехнику на шасси КАМАЗ на стоянке и под заказ. Став нашим <br />
 клиентом, Вы получаете полный комплекс оказываемых услуг и гарантию на всю продукцию от завода-изготовителя.</div>
+
+<div class="trak"><img src="../images/uploads/source/trak_1.jpg" /></div>
+<div class="trak" style="left: 401px;"><img src="../images/uploads/source/trak_2.jpg" /></div>
 
 <div class="params">Параметры</div>
 <div class="params_data" style="top: 532px;">Колесная формула</div>
