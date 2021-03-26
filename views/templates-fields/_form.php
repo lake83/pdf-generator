@@ -17,6 +17,8 @@ $form = ActiveForm::begin(['layout' => 'horizontal', 'enableAjaxValidation' => t
 
     <?= $form->field($model, 'start_value')->textInput(['maxlength' => true]) ?>
     
+    <?= $form->field($model, 'is_image')->checkbox() ?>
+    
     <div class="box-footer">
         <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Сохранить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

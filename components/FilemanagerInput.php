@@ -10,7 +10,7 @@ use xvs32x\tinymce\TinymceAsset;
 
 class FilemanagerInput extends InputWidget
 {
-    public $preview = true;
+    public $preview = true, $data, $attr;
     
     public $configPath = [
         'upload_dir' => '/images/uploads/source/',
@@ -21,13 +21,16 @@ class FilemanagerInput extends InputWidget
     public function init()
     {
         parent::init();
+        
+        $this->attr = str_replace(['[', ']'], '', $this->attribute);
+        
         $this->view->registerJs("
-            $('#modal_filemanager .modal-dialog').css('width', document.body.clientWidth - 60 + 'px');
-            $('#modal_filemanager .modal-body').css('height', document.body.clientHeight - 120 + 'px');
+            $('#modal_filemanager-$this->attr .modal-dialog').css('width', document.body.clientWidth - 60 + 'px');
+            $('#modal_filemanager-$this->attr .modal-body').css('height', document.body.clientHeight - 120 + 'px');
         ");
         Modal::begin([
             'header' => '<b style="font-size: 20px">Файловый менеджер</b>',
-            'id' => 'modal_filemanager',
+            'id' => 'modal_filemanager-' . $this->attr,
             'toggleButton' => ['label' => 'Выбрать', 'class' => 'btn btn-default']
         ]);
         echo '<iframe src="' . $this->setUrl() . '" frameborder="0" width="100%" height="100%"></iframe>';
@@ -38,15 +41,18 @@ class FilemanagerInput extends InputWidget
     public function run()
     {
         if ($this->hasModel()) {
-            echo '<div class="form-group"' . (empty($this->model->{$this->attribute}) ? ' style="display:none"' : '') . '>
-                <div id="preview" class="control-label col-sm-3">' . ($this->preview ? Html::img(SiteHelper::resized_image($this->model->{$this->attribute}, 120, 100)) : $this->model->{$this->attribute}) . '</div>
+            $attribute = $this->data ?: $this->model->{$this->attribute};
+            
+            echo '<div class="form-group"' . (empty($attribute) ? ' style="display:none"' : '') . '>
+                <div class="' . $this->attr . ' control-label col-sm-3">' . ($this->preview ? Html::img(SiteHelper::resized_image($attribute, 120, 100)) : $attribute) . '</div>
             </div>';
-                      
+            
             if (!ArrayHelper::getValue($this->options, 'id')) {
                 $this->options['id'] = Html::getInputId($this->model, $this->attribute);
             }
             echo Html::activeHiddenInput($this->model, $this->attribute, $this->options + [
-                'onchange' => 'js:$("#preview img").attr("src", "/images/uploads/thumbs/" + this.value);if($("#preview").parent(".form-group").is(":hidden")){$("#preview").parent(".form-group").show();}'
+                'value' => $attribute,
+                'onchange' => 'js:$(".' . $this->attr . ' img").attr("src", "/images/uploads/thumbs/" + this.value);if($(".' . $this->attr . '").parent(".form-group").is(":hidden")){$(".' . $this->attr . '").parent(".form-group").show();}'
             ]);
         } else {
             if (!ArrayHelper::getValue($this->options, 'id')) {

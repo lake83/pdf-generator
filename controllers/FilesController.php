@@ -39,7 +39,7 @@ class FilesController extends AdminController
                 $model->values = true;
                 
                 foreach ($model->filds as $field) {
-                    $model->rows[$field->id] = ['label' => $field->name, 'value' => $field->start_value];
+                    $model->rows[$field->id] = ['label' => $field->name, 'value' => $field->start_value, 'is_image' => $field->is_image];
                 }
                 return $this->render('create', ['model' => $model]);
             } else {
@@ -68,7 +68,7 @@ class FilesController extends AdminController
             return $this->redirect(['index']);
         }
         foreach ($model->filds as $field) {
-            $model->rows[$field->id] = ['label' => $field->name, 'value' => $field->start_value];
+            $model->rows[$field->id] = ['label' => $field->name, 'value' => $field->start_value, 'is_image' => $field->is_image];
         }
         return $this->render('update', ['model' => $model]);
     }
@@ -88,7 +88,7 @@ class FilesController extends AdminController
         //$content = $this->renderPartial('_samplePdf');
         
         foreach ($model->filds as $field) {
-            $content = str_replace($field->symbol, $model->filds_value[$field->id], $content);
+            $content = str_replace($field->symbol, ($field->is_image ? '../images/uploads/source/' : '') . $model->filds_value[$field->id], $content);
             $content = str_replace('{{CP_title}}', $model->name, $content);
         }
         $pdf = new Pdf([
