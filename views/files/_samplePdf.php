@@ -11,8 +11,8 @@
 <div class="text">ООО «АВТОГИГАНТ-НЧ» - предлагает Вашему вниманию автотехнику на шасси КАМАЗ на стоянке и под заказ. Став нашим <br />
 клиентом, Вы получаете полный комплекс оказываемых услуг и гарантию на всю продукцию от завода-изготовителя.</div>
 
-<div class="trak"><img src="../images/uploads/source/trak_1.jpg" /></div>
-<div class="trak" style="left: 401px;"><img src="../images/uploads/source/trak_2.jpg" /></div>
+<div class="trak" style="background-image: url('{{trak_1}}');"></div>
+<div class="trak" style="left: 401px;background-image: url('{{trak_2}}');"></div>
 
 <div class="params">Параметры</div>
 <div class="params_data" style="top: 532px;">Колесная формула</div>
